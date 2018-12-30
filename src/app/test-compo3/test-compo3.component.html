@@ -1,3 +1,18 @@
-<p>
-  test-compo3 works!
-</p>
+<header>{{title}}</header>
+
+<div *ngFor="let day of days">
+  <div [ngSwitch]="day">
+    <div *ngIf="!isOthersHidden">
+      <span *ngSwitchCase="'Poniedziałek'">Monday</span>
+      <span *ngSwitchCase="'Wtorek'">Tuesday</span>
+      <span *ngSwitchCase="'Środa'">Wednesday</span>
+      <span *ngSwitchCase="'Czwartek'">Thursday</span>
+      <span *ngSwitchCase="'Piątek'">Friday</span>
+      <span *ngSwitchCase="'Sobota'">Saturday</span>
+    </div>
+    <span *ngSwitchCase="'Niedziela'" [hidden]="isSundayHidden">Sunday</span>
+    <!--<span *ngSwitchDefault>Something went wrong!</span>-->
+  </div>
+</div>
+<button (click)="hideSunday()">Hide Sunday! (hidden)</button>
+<button (click)="hideOtherDays()">Hide others! (*ngIf)</button>
