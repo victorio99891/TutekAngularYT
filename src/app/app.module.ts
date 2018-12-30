@@ -5,16 +5,22 @@ import { AppComponent } from './app.component';
 import { TestCompoComponent } from './test-compo/test-compo.component';
 import { TestCompo2Component } from './test-compo2/test-compo2.component';
 import { TestCompo3Component } from './test-compo3/test-compo3.component';
+import { TestCompo4Component } from './test-compo4/test-compo4.component';
+import {FormsModule} from '@angular/forms';
+import { TestCompo5Component } from './test-compo5/test-compo5.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestCompoComponent,
     TestCompo2Component,
-    TestCompo3Component
+    TestCompo3Component,
+    TestCompo4Component,
+    TestCompo5Component
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

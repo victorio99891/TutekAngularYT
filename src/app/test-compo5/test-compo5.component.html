@@ -1,0 +1,19 @@
+<h2>EVENT BINDING</h2>
+<h3 [className]="colorClass">Angular binding:</h3>
+<label>
+  <input [disabled]="isDisable" (focus)="onFocus()">
+</label>
+<br/>
+<label>
+  <input [disabled]="isDisable" (click)="onClick($event)">
+</label>
+<br/>
+<label>
+  <input [disabled]="isDisable" (mousemove)="onMouseMove($event)">
+</label>
+<br/>
+<label>
+  <input [disabled]="isDisable" (paste)="onPaste()"> {{inputText}}
+</label>
+<br/>
+<button (click)="change()">Change!</button>
