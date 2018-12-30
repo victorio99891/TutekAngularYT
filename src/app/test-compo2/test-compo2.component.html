@@ -1,0 +1,22 @@
+<div *ngFor="let day of days; let e = even let o = odd">
+  <ul>
+    <li *ngIf="e">
+      <span style="color: red">{{day}}</span>
+    </li>
+    <li *ngIf="o">
+      <span style="color: blue">{{day}}</span>
+    </li>
+  </ul>
+</div>
+<hr/>
+<ng-container *ngIf="days.length > 0; then daysPresent; else noDays">
+</ng-container>
+
+<ng-template #daysPresent>
+  <div *ngFor="let day of days">{{day}}</div>
+</ng-template>
+
+<ng-template #noDays>
+  <span style="font-weight: bolder">Nie ma dni w liście albo sprawdzasz warunek > 10 :)!</span>
+</ng-template>
+

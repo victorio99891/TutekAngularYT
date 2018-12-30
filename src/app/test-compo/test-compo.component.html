@@ -1,0 +1,14 @@
+<p>
+
+  {{(field1 ? field1 : 'no content') | uppercase}} <br/>
+
+  <button (click)="changeContent()">Change!</button>
+  <br/>
+
+  {{field2 | date: 'yyyy-MM-dd HH:mm:ss'}} <br/>
+
+  {{field3 | number: '1.1-4'}} <br/>
+
+  {{item.showItem()}}
+
+</p>
