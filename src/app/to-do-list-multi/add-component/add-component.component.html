@@ -1,0 +1,5 @@
+<label>
+  What you need to do? <br/>
+  <input style="margin-top: 5px" type="text" placeholder="Type task.." (keydown)="addNewByHitEnter($event)" [(ngModel)]="inputTaskLabel">
+  <button (click)="addNewTask()">Add task.</button>
+</label>

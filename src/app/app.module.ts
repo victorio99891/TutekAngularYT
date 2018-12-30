@@ -10,6 +10,12 @@ import {FormsModule} from '@angular/forms';
 import { TestCompo5Component } from './test-compo5/test-compo5.component';
 import { TestCompo6Component } from './test-compo6/test-compo6.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
+import { CompComunicationInputComponent } from './comp-comunication-input/comp-comunication-input.component';
+import { ChildCommunicationInputComponent } from './comp-comunication-input/child-communication-input/child-communication-input.component';
+import { ToDoListMultiComponent } from './to-do-list-multi/to-do-list-multi.component';
+import { AddComponentComponent } from './to-do-list-multi/add-component/add-component.component';
+import { DoneListComponent } from './to-do-list-multi/done-list/done-list.component';
+import { TodoListComponent } from './to-do-list-multi/todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,13 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
     TestCompo4Component,
     TestCompo5Component,
     TestCompo6Component,
-    ToDoListComponent
+    ToDoListComponent,
+    CompComunicationInputComponent,
+    ChildCommunicationInputComponent,
+    ToDoListMultiComponent,
+    AddComponentComponent,
+    DoneListComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,

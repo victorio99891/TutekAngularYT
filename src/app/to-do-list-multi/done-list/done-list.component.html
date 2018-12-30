@@ -1,0 +1,13 @@
+<div *ngIf="doneTaskList.length > 0; else noContent">
+  <p>Task done: {{doneTaskList.length}}</p>
+  <ul>
+    <li *ngFor="let task of doneTaskList">
+      {{task.taskText}} <br/> ({{timeConverter(task.taskTime)}})
+    </li>
+  </ul>
+</div>
+
+<ng-template #noContent>
+  <p>There is no content!</p>
+</ng-template>
+

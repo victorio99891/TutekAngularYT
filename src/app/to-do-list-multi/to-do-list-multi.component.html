@@ -1,0 +1,7 @@
+<div class="container">
+  <app-add-component (sendNewTask)="add($event)"></app-add-component>
+</div>
+<div class="container">
+  <app-todo-list [currentTaskList]="tasksList" (emitDone)="done($event)" (emitRemove)="remove($event)"></app-todo-list>
+  <app-done-list [doneTaskList]="tasksDone"></app-done-list>
+</div>

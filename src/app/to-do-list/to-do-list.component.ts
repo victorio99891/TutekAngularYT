@@ -10,7 +10,7 @@ export class ToDoListComponent implements OnInit {
   taskText: string = '';
 
   taskList: Array<Task> = [
-    new Task('Umyj zęby')
+    new Task('Brush your teeth')
   ];
   doneTaskList: Array<Task> = [];
 
