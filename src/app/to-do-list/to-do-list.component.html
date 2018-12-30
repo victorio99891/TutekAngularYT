@@ -1,0 +1,31 @@
+<div class="container">
+  <label>
+    <input type="text" placeholder="Type task..." [(ngModel)]="taskText" (keydown)="addNewTaskByEnter($event)">
+    <button type="button" (click)="addNewTask()">Add new task</button>
+  </label>
+</div>
+<div class="container">
+  <div *ngIf="taskList.length > 0; else emptyTaskList">
+    <p>Task to do: {{taskList.length}}</p>
+    <ul>
+      <li *ngFor="let task of taskList; let i = index">{{task.taskText}}&nbsp;<button (click)="deleteTask(i)">Delete
+      </button>
+        <button (click)="tagAsDone(i)">Done</button>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="doneTaskList.length > 0; else emptyTaskList">
+    <p>Task done: {{doneTaskList.length}}</p>
+    <ul>
+      <li *ngFor="let task of doneTaskList; let i = index">
+        {{task.taskText}} <br/> ({{timeConverter(task.taskTime)}})<br/>
+      </li>
+    </ul>
+  </div>
+  <ng-template #emptyTaskList>
+    <p>There is no tasks!</p>
+  </ng-template>
+</div>
+
+
+
