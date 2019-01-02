@@ -19,6 +19,7 @@ import { TodoListComponent } from './to-do-list-multi/todo-list/todo-list.compon
 import { TaskListComponent } from './task-list/task-list.component';
 import { ChildTaskListComponent } from './task-list/child-task-list/child-task-list.component';
 import { DoneTaskListComponent } from './task-list/done-task-list/done-task-list.component';
+import { IntroductionServicesComponent } from './introduction-services/introduction-services.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { DoneTaskListComponent } from './task-list/done-task-list/done-task-list
     TodoListComponent,
     TaskListComponent,
     ChildTaskListComponent,
-    DoneTaskListComponent
+    DoneTaskListComponent,
+    IntroductionServicesComponent
   ],
   imports: [
     BrowserModule,

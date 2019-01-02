@@ -21,18 +21,27 @@ export class TaskListComponent implements OnInit {
 
   @ViewChild('inputText')
   inputText: ElementRef;
+  inputError: boolean = false;
+  isLoaded: boolean = false;
 
   constructor() {
   }
 
   ngOnInit() {
+    setTimeout(()=>{
+      this.isLoaded = true;
+    },1000)
   }
 
   add(task: HTMLInputElement) {
-    this.taskList.push(task.value);
-    console.log(this.inputText.nativeElement.value);
-    // NOT RECOMMENDED IF NOT NECESSARY
-    this.inputText.nativeElement.value = '';
+    if (task.value != '') {
+      this.taskList.push(task.value);
+      console.log(this.inputText.nativeElement.value);
+      // NOT RECOMMENDED IF NOT NECESSARY
+      this.inputText.nativeElement.value = '';
+    } else {
+      this.inputError = true;
+    }
   }
 
   selected(event: string) {
@@ -41,5 +50,9 @@ export class TaskListComponent implements OnInit {
 
   done(task: string) {
     this.doneTaskList.push(task);
+  }
+
+  cancelError() {
+    this.inputError = false;
   }
 }

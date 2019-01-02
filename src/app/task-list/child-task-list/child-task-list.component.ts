@@ -11,10 +11,10 @@ export class ChildTaskListComponent implements OnInit {
   tasks: Array<string>;
 
   @Output()
-  eventTask = new EventEmitter<string>();
+  emitSelect = new EventEmitter<string>();
 
   @Output()
-  anotherEventTask = new EventEmitter<string>();
+  emitDone = new EventEmitter<string>();
 
   constructor() {
   }
@@ -22,8 +22,8 @@ export class ChildTaskListComponent implements OnInit {
   ngOnInit() {
   }
 
-  emitTask(index: number) {
-    this.eventTask.emit(this.tasks[index]);
+  selectTask(index: number) {
+    this.emitSelect.emit(this.tasks[index]);
   }
 
   getColor() {
@@ -35,7 +35,7 @@ export class ChildTaskListComponent implements OnInit {
   }
 
   doneTask(index: number) {
-    this.anotherEventTask.emit(this.tasks[index]);
+    this.emitDone.emit(this.tasks[index]);
     this.tasks.splice(index, 1);
   }
 }

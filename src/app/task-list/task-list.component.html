@@ -1,10 +1,21 @@
-<label for="input_1">
-  Type task:
-  <!-- Pass value by using # local reference to the other method in the same component-->
-  <input id="input_1" name="input_1" #inputText>
-</label>
-<button (click)="add(inputText)">Add</button>
-<div class="container">
-<app-child-task-list #childRef [tasks]="taskList" (eventTask)="selected($event)" (anotherEventTask)="done($event)"></app-child-task-list>
-<app-done-task-list [doneTask]="doneTaskList"></app-done-task-list>
+<div *ngIf="!isLoaded" class="text-center" style="margin-top: 100px;">
+<div  class="spinner-border" role="status"></div>
+  <div>Loading...</div>
+</div>
+<div *ngIf="isLoaded">
+  <div class="container" style="margin-top: 50px">
+    <div class="form-group">
+      <label for="input_1">Type task:</label>
+      <!-- Pass value by using # local reference to the other method in the same component-->
+      <input (keydown)="cancelError()" class="form-control" id="input_1" name="input_1" #inputText>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <div *ngIf="inputError" class="alert alert-danger">You need to type new task... Field cannot be empty.</div>
+    </div>
+    <button class="btn btn-primary" (click)="add(inputText)">Add</button>
+  </div>
+  <div class="container1">
+    <app-child-task-list #childRef [tasks]="taskList" (emitSelect)="selected($event)"
+                         (emitDone)="done($event)"></app-child-task-list>
+    <app-done-task-list [doneTask]="doneTaskList"></app-done-task-list>
+  </div>
 </div>
