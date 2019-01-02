@@ -16,6 +16,9 @@ import { ToDoListMultiComponent } from './to-do-list-multi/to-do-list-multi.comp
 import { AddComponentComponent } from './to-do-list-multi/add-component/add-component.component';
 import { DoneListComponent } from './to-do-list-multi/done-list/done-list.component';
 import { TodoListComponent } from './to-do-list-multi/todo-list/todo-list.component';
+import { TaskListComponent } from './task-list/task-list.component';
+import { ChildTaskListComponent } from './task-list/child-task-list/child-task-list.component';
+import { DoneTaskListComponent } from './task-list/done-task-list/done-task-list.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { TodoListComponent } from './to-do-list-multi/todo-list/todo-list.compon
     ToDoListMultiComponent,
     AddComponentComponent,
     DoneListComponent,
-    TodoListComponent
+    TodoListComponent,
+    TaskListComponent,
+    ChildTaskListComponent,
+    DoneTaskListComponent
   ],
   imports: [
     BrowserModule,

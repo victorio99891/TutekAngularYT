@@ -1,0 +1,10 @@
+<p>Task number: {{doneTask.length}}</p>
+<ul *ngIf="doneTask.length > 0; else noTask">
+  <li *ngFor="let task of doneTask">
+    {{task}}
+  </li>
+</ul>
+
+<ng-template #noTask>
+  <p>No done tasks!</p>
+</ng-template>

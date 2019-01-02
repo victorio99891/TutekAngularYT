@@ -1,0 +1,10 @@
+<label for="input_1">
+  Type task:
+  <!-- Pass value by using # local reference to the other method in the same component-->
+  <input id="input_1" name="input_1" #inputText>
+</label>
+<button (click)="add(inputText)">Add</button>
+<div class="container">
+<app-child-task-list #childRef [tasks]="taskList" (eventTask)="selected($event)" (anotherEventTask)="done($event)"></app-child-task-list>
+<app-done-task-list [doneTask]="doneTaskList"></app-done-task-list>
+</div>

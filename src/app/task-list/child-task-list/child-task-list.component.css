@@ -1,0 +1,19 @@
+li {
+  list-style: none;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.oddElement {
+  background-color: aquamarine;
+}
+
+.evenElement {
+  background-color: cadetblue;
+  color: aliceblue;
+}
+
+.lastElement {
+  background-color: pink;
+  font-weight: bold;
+}
