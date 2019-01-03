@@ -19,6 +19,13 @@ export class AddComponent implements OnInit {
   add() {
     if (this.currentTask != '') {
       this.tskService.add(this.currentTask);
+      this.currentTask = '';
+    }
+  }
+
+  addByKey(event) {
+    if (event.key === 'Enter') {
+      this.add();
     }
   }
 }

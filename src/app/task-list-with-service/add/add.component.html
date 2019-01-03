@@ -1,5 +1,5 @@
 <div>
   <label for="taskLabel"></label>
-  <input type="text" id="taskLabel" [(ngModel)]="currentTask">
+  <input type="text" id="taskLabel" [(ngModel)]="currentTask" (keydown)="addByKey($event)">
   <button (click)="add()">Add</button>
 </div>

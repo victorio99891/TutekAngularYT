@@ -1,7 +1,10 @@
+<div style="margin-bottom: 20px">
+  Tasks to do: {{taskList.length}}
+</div>
 <div *ngIf="taskList.length > 0; else emptyList">
   <ul>
-    <li *ngFor="let task of taskList;  let i = index">
-      {{task}}
+    <li appDate appChecked [date]="task.created" *ngFor="let task of taskList;  let i = index">
+      {{task.name | transformTask: '!'}} <br/>
       <button (click)="deleteTask(i)">Delete</button>
       <button (click)="doneTask(i)">Done</button>
     </li>

@@ -30,6 +30,9 @@ import { AddComponent } from './task-list-with-service/add/add.component';
 import {TaskService} from './task-list-with-service/service/taskService';
 import { DoneComponent } from './task-list-with-service/done/done.component';
 import { CurrentComponent } from './task-list-with-service/current/current.component';
+import { CheckedDirective } from './shared/checked.directive';
+import { DateDirective } from './shared/date.directive';
+import { TransformTaskPipe } from './shared/transform-task.pipe';
 
 @NgModule({
   declarations: [
@@ -57,7 +60,10 @@ import { CurrentComponent } from './task-list-with-service/current/current.compo
     TaskListWithServiceComponent,
     AddComponent,
     DoneComponent,
-    CurrentComponent
+    CurrentComponent,
+    CheckedDirective,
+    DateDirective,
+    TransformTaskPipe
   ],
   imports: [
     BrowserModule,
