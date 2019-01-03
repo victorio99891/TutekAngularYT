@@ -1,0 +1,13 @@
+<div *ngIf="doneTasks.length > 0; else emptyList">
+  <ul>
+    <li *ngFor="let task of doneTasks">
+      {{task}}
+    </li>
+  </ul>
+</div>
+
+<ng-template #emptyList>
+  <div>
+    Tasks list is empty!
+  </div>
+</ng-template>
