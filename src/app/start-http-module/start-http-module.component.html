@@ -1,0 +1,29 @@
+<div class="container-flex">
+  <button (click)="getPosts()">Get All Posts</button>
+  <button (click)="getPost(idValue)">Get Post</button>
+  <button (click)="getPostByUser(idValue)">Get Post By User Id</button>
+  <button (click)="addPost()">Add post</button>
+  <button (click)="updatePost(idValue)">Put post</button>
+  <button (click)="myAPICall()">myUser</button>
+  <input type="number" [(ngModel)]="idValue">
+</div>
+<div class="container-flex">
+  <ul *ngIf="postList.length > 0; else noContent">
+    <li *ngFor="let post of postList">
+      <div>
+        <span style="color: red; font-size: 11px">Post ID: {{post.id}} (UserID: {{post.userId}})
+          <br/>Subject: {{post.title | transformTask:'.'}}</span> <br/>
+        <span style="font-size: 12px">{{post.body}}</span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div>
+  <p-calendar [(ngModel)]="value" showTime="true" hourFormat="24" touchUI="true" dateFormat="dd-mm-yy"
+              (ngModelChange)="logit(value)"></p-calendar>
+  {{value.toLocaleDateString()}}
+</div>
+<button (click)="bookingsGet(value)">API CALL!</button>
+<ng-template #noContent>
+  There is no content!
+</ng-template>

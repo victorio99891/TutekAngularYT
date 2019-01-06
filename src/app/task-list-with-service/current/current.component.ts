@@ -12,10 +12,11 @@ export class CurrentComponent implements OnInit {
   taskList: Array<TaskModel> = [];
 
   constructor(private tskService: TaskService) {
-    /*this.tskService.getListTasksObs().subscribe((items: Array<string>) => {
-      this.taskList = items;
-    });*/
-    this.taskList = this.tskService.tasksList;
+    this.tskService.getListTasksObs().subscribe((items: Array<TaskModel>) => {
+      // slice can change refernece to make sortList pipe working! :)
+      this.taskList = items.slice();
+    });
+    //this.taskList = this.tskService.tasksList;
   }
 
   ngOnInit() {

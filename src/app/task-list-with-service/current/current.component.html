@@ -3,7 +3,7 @@
 </div>
 <div *ngIf="taskList.length > 0; else emptyList">
   <ul>
-    <li appDate appChecked [date]="task.created" *ngFor="let task of taskList;  let i = index">
+    <li appDate appChecked [date]="task.created" *ngFor="let task of taskList | sortList;  let i = index">
       {{task.name | transformTask: '!'}} <br/>
       <button (click)="deleteTask(i)">Delete</button>
       <button (click)="doneTask(i)">Done</button>

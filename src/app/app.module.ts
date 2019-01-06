@@ -25,14 +25,20 @@ import {Klikacz2Component} from './introduction-services/klikacz2/klikacz2.compo
 import {LogService} from './services/log.service';
 import {DropdownTestComponent} from './dropdown-test/dropdown-test.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { TaskListWithServiceComponent } from './task-list-with-service/task-list-with-service.component';
-import { AddComponent } from './task-list-with-service/add/add.component';
+import {TaskListWithServiceComponent} from './task-list-with-service/task-list-with-service.component';
+import {AddComponent} from './task-list-with-service/add/add.component';
 import {TaskService} from './task-list-with-service/service/taskService';
-import { DoneComponent } from './task-list-with-service/done/done.component';
-import { CurrentComponent } from './task-list-with-service/current/current.component';
-import { CheckedDirective } from './shared/checked.directive';
-import { DateDirective } from './shared/date.directive';
-import { TransformTaskPipe } from './shared/transform-task.pipe';
+import {DoneComponent} from './task-list-with-service/done/done.component';
+import {CurrentComponent} from './task-list-with-service/current/current.component';
+import {CheckedDirective} from './shared/checked.directive';
+import {DateDirective} from './shared/date.directive';
+import {TransformTaskPipe} from './shared/transform-task.pipe';
+import {SortListPipe} from './shared/sort-list.pipe';
+import {StartHttpModuleComponent} from './start-http-module/start-http-module.component';
+import {HttpJsonService} from './start-http-module/service/http-json.service';
+import {HttpClientModule} from '@angular/common/http';
+import {CalendarModule} from 'primeng/primeng';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -63,14 +69,20 @@ import { TransformTaskPipe } from './shared/transform-task.pipe';
     CurrentComponent,
     CheckedDirective,
     DateDirective,
-    TransformTaskPipe
+    TransformTaskPipe,
+    SortListPipe,
+    StartHttpModuleComponent
+
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    CalendarModule
   ],
-  providers: [LogService, TaskService],
+  providers: [LogService, TaskService, HttpJsonService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
