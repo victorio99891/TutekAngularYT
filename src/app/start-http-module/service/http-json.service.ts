@@ -6,6 +6,7 @@ import {BookingModel} from '../model/booking';
 import {DateModel} from '../model/date.model';
 import * as moment from 'moment';
 import {UserImplModel} from '../model/user-impl.model';
+import {MessageModel} from '../model/message.model';
 
 
 @Injectable({
@@ -61,9 +62,9 @@ export class HttpJsonService {
     // return null;
   }
 
-  addNewUserREST(model: UserImplModel, secretPassword: string): Observable<UserImplModel> {
+  addNewUserREST(model: UserImplModel, secretPassword: string): Observable<MessageModel> {
     let secretParam: HttpParams = new HttpParams().set('secret', secretPassword);
-    return this.http.post<UserImplModel>(MyEnumService._TOMCAT + '/users', model, {params: secretParam});
+    return this.http.post<MessageModel>(MyEnumService._TOMCAT + '/users', model, {params: secretParam});
   }
 }
 

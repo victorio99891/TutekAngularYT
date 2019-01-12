@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpJsonService} from '../service/http-json.service';
 import {UserImplModel} from '../model/user-impl.model';
 import {HttpErrorResponse} from '@angular/common/http';
+import {MessageModel} from '../model/message.model';
 
 @Component({
   selector: 'app-create-user-form',
@@ -55,11 +56,11 @@ export class CreateUserFormComponent implements OnInit {
     if (isSurnameValid) {
       this.printInputData();
 
-      this.http.addNewUserREST(this.userFormData, this.secretPassword).subscribe(x => {
-        this.goodMessage = JSON.stringify(x);
+      this.http.addNewUserREST(this.userFormData, this.secretPassword).subscribe((data) => {
+        this.goodMessage = JSON.stringify(data.message);
         this.somethingIsGood = true;
       }, (error) => {
-        this.errorMessage = JSON.stringify(error.error);
+        this.errorMessage = JSON.stringify(error.error.message);
         this.somethingIsWrong = true;
       });
 
