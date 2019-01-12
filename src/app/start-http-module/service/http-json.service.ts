@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {BookingModel} from '../model/booking';
 import {DateModel} from '../model/date.model';
 import * as moment from 'moment';
+import {UserImplModel} from '../model/user-impl.model';
 
 
 @Injectable({
@@ -40,7 +41,7 @@ export class HttpJsonService {
 
 
   myUsers(): Observable<Array<UserModel>> {
-    return this.http.get<Array<UserModel>>(MyEnumService._TOMCAT+ '/users');
+    return this.http.get<Array<UserModel>>(MyEnumService._TOMCAT + '/users');
   }
 
 
@@ -52,10 +53,17 @@ export class HttpJsonService {
 
       //console.log(new Date().toISOString());
       //console.log(moment(new Date().toISOString()).local().format('YYYY-MM-DD[T]HH:mm:ss[Z]'));
-      myParams = new HttpParams().set('dateTo', moment(model.dateTo.toISOString()).local().format('YYYY-MM-DD[T]HH:mm[Z]'));
+      myParams = new HttpParams().set('dateTo',
+        moment(model.dateTo.toISOString())
+          .local().format('YYYY-MM-DD[T]HH:mm[Z]'));
     }
     return this.http.get<Array<BookingModel>>(MyEnumService._TOMCAT + '/bookings/list_time_frame', {params: myParams});
     // return null;
+  }
+
+  addNewUserREST(model: UserImplModel, secretPassword: string): Observable<UserImplModel> {
+    let secretParam: HttpParams = new HttpParams().set('secret', secretPassword);
+    return this.http.post<UserImplModel>(MyEnumService._TOMCAT + '/users', model, {params: secretParam});
   }
 }
 

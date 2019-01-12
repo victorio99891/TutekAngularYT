@@ -1,0 +1,31 @@
+<div>
+  <form>
+    <label>
+      Login:
+      <input type="text" (click)="clearErrorMessage()" [(ngModel)]="userFormData.login" name="null">
+    </label><br/>
+    <label>
+      Password:
+      <input type="password" (click)="clearErrorMessage()" [(ngModel)]="userFormData.password" name="null">
+    </label><br/>
+    <label>
+      Repeat:
+      <input type="password" (click)="clearErrorMessage()" [(ngModel)]="repeatedPassword" name="null">
+    </label><br/>
+    <label>
+      Name:
+      <input type="text" (click)="clearErrorMessage()" [(ngModel)]="userFormData.name" name="null">
+    </label><br/>
+    <label>
+      Surname:
+      <input type="text" (click)="clearErrorMessage()" [(ngModel)]="userFormData.surname" name="null">
+    </label><br/>
+    <button type="button" (click)="validateForm()">Submit</button>
+    <p *ngIf="somethingIsWrong" style="color: white; background-color: red; font-weight: bolder">
+      {{errorMessage}}
+    </p>
+    <p *ngIf="somethingIsGood" style="color: white; background-color: green; font-weight: bolder">
+      {{goodMessage}}
+    </p>
+  </form>
+</div>

@@ -39,6 +39,7 @@ import {HttpJsonService} from './start-http-module/service/http-json.service';
 import {HttpClientModule} from '@angular/common/http';
 import {CalendarModule} from 'primeng/primeng';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { CreateUserFormComponent } from './start-http-module/create-user-form/create-user-form.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
     DateDirective,
     TransformTaskPipe,
     SortListPipe,
-    StartHttpModuleComponent
+    StartHttpModuleComponent,
+    CreateUserFormComponent
 
   ],
   imports: [

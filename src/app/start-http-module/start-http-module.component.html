@@ -19,11 +19,14 @@
   </ul>
 </div>
 <div>
-  <p-calendar [(ngModel)]="value" showTime="true" hourFormat="24" touchUI="true" dateFormat="dd-mm-yy"
+  <p-calendar [(ngModel)]="value" showTime="true" hourFormat="24" touchUI="false" dateFormat="dd-mm-yy"
               (ngModelChange)="logit(value)"></p-calendar>
   {{value.toLocaleDateString()}}
+  <button (click)="bookingsGet(value)">API CALL!</button>
 </div>
-<button (click)="bookingsGet(value)">API CALL!</button>
+<div>
+  <app-create-user-form></app-create-user-form>
+</div>
 <ng-template #noContent>
   There is no content!
 </ng-template>
