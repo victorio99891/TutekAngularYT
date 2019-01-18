@@ -66,6 +66,10 @@ export class HttpJsonService {
     let secretParam: HttpParams = new HttpParams().set('secret', secretPassword);
     return this.http.post<MessageModel>(MyEnumService._TOMCAT + '/users', model, {params: secretParam});
   }
+
+  uploadFileIntoServer(file: FormData): Observable<FormData> {
+    return this.http.post<FormData>('http://localhost:8080/REST/fileUp', file);
+  }
 }
 
 enum MyEnumService {

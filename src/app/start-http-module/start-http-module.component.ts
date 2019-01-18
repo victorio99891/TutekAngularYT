@@ -100,6 +100,9 @@ export class StartHttpModuleComponent implements OnInit {
     };
     this.http.getBookings(model).subscribe(items => console.log(items));
   }
+
+
+
 }
 
 
