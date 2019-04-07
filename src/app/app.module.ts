@@ -40,6 +40,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {CalendarModule} from 'primeng/primeng';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { CreateUserFormComponent } from './start-http-module/create-user-form/create-user-form.component';
+import { FileUploaderComponent } from './start-http-module/file-uploader/file-uploader.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { CreateUserFormComponent } from './start-http-module/create-user-form/cr
     TransformTaskPipe,
     SortListPipe,
     StartHttpModuleComponent,
-    CreateUserFormComponent
+    CreateUserFormComponent,
+    FileUploaderComponent
 
   ],
   imports: [
